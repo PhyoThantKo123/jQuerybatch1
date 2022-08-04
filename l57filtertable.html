@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<title>Filter Table</title>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		body{
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.container{
+			width: 700px;
+		}
+		.form-control{
+			width: 100%;
+			font-size: 16px;
+
+			border: 1px solid #ddd;
+			padding: 12px 20px 12px 50px;
+			margin-bottom: 20px;
+		}
+		.form-control:focus{
+			outline: none;
+		}
+		#datatable{
+			width: 100%;
+			border: 1px solid #ccc;
+			border-collapse: collapse;
+		}
+		.header,#datatable tr:hover{
+			background-color: #f4f4f4;
+		}
+		#datatable tr{
+			border-bottom: 1px solid #ddd;
+		}
+		#datatable th,#datatable td{
+			text-align: left;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+		<h2>Customers Lists</h2>
+		<input type="text" name="search" id="search" class="form-control" placeholder="Search for something..."/>
+
+		<table id="datatable">
+			<thead class="header">
+				<th style="width: 60%;">Name</th>
+				<th style="width: 10%;">Age</th>
+				<th style="width: 30%;">City</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Aung Aung</td>
+					<td>20</td>
+					<td>Yangon</td>
+				</tr>
+
+				<tr>
+					<td>Mung Mung</td>
+					<td>25</td>
+					<td>Mandalay</td>
+				</tr>
+
+				<tr>
+					<td>Su Su</td>
+					<td>20</td>
+					<td>Bago</td>
+				</tr>
+
+				<tr>
+					<td>Hla Hla</td>
+					<td>30</td>
+					<td>Mawlamyine</td>
+				</tr>
+
+				<tr>
+					<td>Mya Mya</td>
+					<td>21</td>
+					<td>Yangon</td>
+				</tr>
+
+				<tr>
+					<td>Yu Yu</td>
+					<td>31</td>
+					<td>Yangon</td>
+				</tr>
+
+				<tr>
+					<td>Kung Kung</td>
+					<td>25</td>
+					<td>Mandalay</td>
+				</tr>
+
+				<tr>
+					<td>Zaw Zaw</td>
+					<td>18</td>
+					<td>Mandalay</td>
+				</tr>
+
+				<tr>
+					<td>Zin Zin</td>
+					<td>16</td>
+					<td>Bago</td>
+				</tr>
+
+				<tr>
+					<td>Yin Yin</td>
+					<td>18</td>
+					<td>Mawlamyine</td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// console.log('hii');
+
+		$('#search').keyup(function(){
+			var getinput = $(this).val().toLowerCase();
+			// console.log(getinput);
+
+			// filter for all columns A
+
+			// $('#datatable tr').filter(function(){
+			// 	$(this).toggle(function(){
+			// 		$(this).text().toLowerCase().indexOf(getinput); 
+			// 	});
+			// });
+
+
+			// filter for all columns B
+
+			// $('#datatable tr').filter(function(){
+			// 	if($(this).text().toLowerCase().indexOf(getinput) > - 1){
+			// 		$(this).show();
+					
+			// 	}else{
+			// 		$(this).hide();
+			// 	};
+
+			// });
+
+			// filter for all columns C
+			// $('#datatable tr').filter(function(){
+			// 	if($(this).text().toLowerCase().indexOf(getinput) > -1){
+			// 		$(this).css({
+			// 			// 'display':'' can't block
+			// 			'display':'table-row'
+			// 		});
+			// 	}else{
+			// 		$(this).css('display','none');
+			// 	};
+			// });
+
+			// filter for all columns D
+			// $('#datatable tr').filter(function(){
+			// 	$(this).toggle($(this).text().toLowerCase().indexOf(getinput) > -1);
+			// });
+
+
+			// filter for 1st columns A
+			// $('#datatable tr').filter(function(){
+			// 	if($(this).children().eq(0).text().toLowerCase().indexOf(getinput) > -1){
+			// 		$(this).show();
+			// 	}else{
+			// 		$(this).hide();
+			// 	};
+			// });
+
+			// $('#datatable tr').filter(function(){
+			// 	if($(this).children().eq(2).text().toLowerCase().indexOf(getinput) > -1){
+			// 		$(this).show();
+			// 	}else{
+			// 		$(this).hide();
+			// 	};
+			// });
+
+
+			// filter for 1st columen B
+
+			// $('#datatable tr').filter(function(){
+			// 	if($(this).children(':first').text().toLowerCase().indexOf(getinput) > -1){
+			// 		$(this).show();
+			// 	}else{
+			// 		$(this).hide();
+			// 	};
+			// });
+
+			// $('#datatable tr').filter(function(){
+			// 	if($(this).children(':last').text().toLowerCase().indexOf(getinput) > -1){
+			// 		$(this).show();
+			// 	}else{
+			// 		$(this).hide();
+			// 	};
+			// });
+
+			// filter for 1st column C
+
+			// $('#datatable tr').filter(function(){
+			// 	$(this).toggle($(this).children('').text().toLowerCase().indexOf(getinput) > -1);
+			// });
+
+
+		});
+
+	});
+</script>
+</body>
+</html>

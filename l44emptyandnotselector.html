@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>:empty & :not() Selector</title>
+	<style type="text/css">
+		body{
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.container{
+			width: 600px;
+			background-color: #f4f4f4;
+			padding: 20px;
+		}
+		.box{
+			width: 200px;
+			height: 100px;
+		}
+		.aa{
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<h1>MY Fav Colors</h1>
+
+	<ul>
+		<li>Black</li>
+		<li>White</li>
+		<li>Blue</li>
+		<li>Pink</li>
+		<li></li>
+		<li>violet</li>
+		<li></li>
+	</ul>
+
+	<hr/>
+
+	<h1>My Fav Anime</h1>
+
+	<ol>
+		<li>Oregairu</li>
+		<li>Horimiya</li>
+		<li>Love is hard for otaku</li>
+		<li></li>
+		<li>onepiece</li>
+		<li>black clover</li>
+		<li></li>
+	</ol>
+
+
+	<hr/>
+
+	<div>
+		<p class="box"></p>
+		<p class="box">Hello i am p tag. inside of div</p>
+		<p class="aa"></p>
+	</div>
+
+	<div class="box"></div>
+
+	<p class="aa"></p>
+
+</div>	
+
+<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		console.log('hello world');
+
+
+		// empty
+		$('ul li:empty').css({
+			'background-color':'steelblue',
+		});
+
+
+		$('ol li:empty').css({
+			'background-color':'red'
+		});
+
+		$('.box:empty').css({
+			'background-color':'orange'
+		});
+
+		// :not()
+
+		// $('li:not(ol li)').css('background-color','violet');
+		// $('li:not(ul li)').css('background-color','green');
+		// $('li:not(ul li:empty)').css('background-color','pink');
+		$('li:not(:empty)').css('background-color','orange');
+		// $('p:not(div p)').css('background-color','steelblue');
+
+	})
+</script>
+</body>
+</html>

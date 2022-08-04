@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Auto complete</title>
+	<link rel="stylesheet" type="text/css" href="./libs/jquery-ui-1.13.1/jquery-ui.min.css"/>
+
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		body{
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.container{
+			width: 500px;
+			background-color: #f4f4f4;
+			padding: 20px;
+		}
+		.form-group{
+			width: 100%;
+		}
+		.form-group label{
+			display: block;
+			margin-bottom: 20px;
+		}
+		.form-group .form-control{
+			width: 100%;
+			font-size: 20px;
+		}
+		.justify-content-end{
+			width: 100%;
+
+			display: flex;
+			justify-content: flex-end;
+
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<form action="" method="">
+			<div class="form-group">
+				<label for="job">job title:</label>
+				<input type="text" name="job" id="job" class="form-control"/>
+			</div>
+			<div class="justify-content-end">
+				<button type="submit" id="submit" class="btn">submit</button>
+			</div>
+		</form>
+	</div>
+	
+<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+<script src="./libs/jquery-ui-1.13.1/jquery-ui.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		console.log('hii');
+
+		var positions = [
+		'CEO',
+		'General Manger',
+		'Manager',
+		'Vice Manager',
+		'Sales Manager',
+		'Supervisor',
+		'CFO',
+		'Finance Manger',
+		'Senior Accountant',
+		'Accountant'
+		];
+
+		$('#job').autocomplete({
+			source:positions
+		});
+
+		$('form').submit(function(e){
+			var getjob = $('#job').val();
+			// window.alert(getjob);
+
+			console.log('This is job = ' +  getjob);
+			e.preventDefault();
+		})
+	})
+</script>
+</body>
+</html>
+
+
+<!-- 20AC -->
